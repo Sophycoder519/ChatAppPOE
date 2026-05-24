@@ -1,33 +1,23 @@
-# Chat App – Part 1: Registration and Login
+# Chat App – Part 1 & Part 2
 
-## Description
-Console application that allows a user to register with:
-- Username (must contain `_` and be ≤5 characters)
-- Password (≥8 chars, one uppercase, one digit, one special character)
-- South African cell phone number (must start with `+27` and have 9 digits)
-
-After registration, the user can log in with the same credentials.
-
-## How to run
-1. Open the project in IntelliJ.
-2. Right-click `Main.java` → Run.
-3. Follow the prompts in the console.
-
-## How to run tests
-Right-click `LoginTest.java` → Run. All tests should pass.
+## Part 1: Registration and Login
+- Username validation (underscore, max 5 characters)
+- Password complexity (≥8 chars, uppercase, digit, special character)
+- South African cell phone number (+27 followed by 9 digits)
+- Login with stored credentials
 
 ## Part 2: Sending Messages
 - After login, a menu appears:
-    1. Send Messages
-    2. Show recently sent messages (Coming Soon)
-    3. Quit
+  1. Send Messages
+  2. Show recently sent messages (Coming Soon)
+  3. Quit
 - User defines number of messages; a for‑loop handles each.
 - For each message:
-    - Recipient validated (+27...)
-    - Message text ≤250 characters
-    - Auto‑generated 10‑digit Message ID
-    - Auto‑generated Message Hash (format: `00:0:HITHANKS`)
-    - User chooses Send, Disregard, or Store
+  - Recipient validated (+27...)
+  - Message text ≤250 characters
+  - Auto‑generated 10‑digit Message ID
+  - Auto‑generated Message Hash (format: `00:0:HITHANKS`)
+  - User chooses Send, Disregard, or Store
 - Sent/Stored messages saved to `messages.json` using `org.json` library
 - Total number of sent messages displayed at the end
 
