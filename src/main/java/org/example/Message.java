@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
+// JSON storage uses org.json library: https://github.com/stleary/JSON-java
 
 public class Message {
     // Static accumulators (shared across all message instances)
