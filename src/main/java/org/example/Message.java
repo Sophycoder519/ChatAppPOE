@@ -57,16 +57,26 @@ public class Message {
         else
             return "Cell phone number is incorrectly formatted or does not contain an international code. Please correct the number and try again.";
     }
-
-    // Create message hash: first two digits of ID + ":" + messageNumber + ":" + first word + last word (all caps)
     public String createMessageHash() {
-        String idPart = messageID.length() >= 2 ? messageID.substring(0, 2) : messageID;
+        // Get first two digits of message ID
+        String idPart = messageID.substring(0, 2);
+
+        // Split message text into words (by spaces)
         String[] words = messageText.trim().split("\\s+");
-        String firstWord = words.length > 0 ? words[0] : "";
+
+        // First word
+        String firstWord = words[0];
+
+        // Last word (if only one word, use it as both)
         String lastWord = words.length > 1 ? words[words.length - 1] : firstWord;
-        String hash = idPart + ":" + messageNumber + ":" + firstWord + lastWord;
+
+        // Combine and convert to uppercase
+        String combined = firstWord + lastWord;
+        String hash = idPart + ":" + messageNumber + ":" + combined;
+
         return hash.toUpperCase();
     }
+
 
     // User chooses: send, disregard, or store
     public String sentMessage(Scanner scanner) {
